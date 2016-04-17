@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   position: absolute;
@@ -9,16 +13,20 @@ body {
   flex-direction: column;
 }
 
-@gutter: 5px;
+@gutter: 10px;
 
-.parentPadding {
+.verticalPadding {
   padding-top: @gutter;
   padding-bottom: @gutter;
 }
 
-.childPadding {
+.horizontalPadding {
   padding-left: @gutter;
   padding-right: @gutter;
+}
+
+.headerElementBorder(@color) {
+  border-bottom: 2px solid @color;
 }
 
 .rc-header {
@@ -46,9 +54,27 @@ body {
   background-color: darkgray;
 
   &-header {
-    border-bottom: 2px solid black;
-    .parentPadding;
-    .childPadding;
+    border-bottom: 1px solid grey;
+    .horizontalPadding;
+
+    > * {
+      display: inline-block;
+      .verticalPadding;
+      .headerElementBorder(transparent);
+    }
+
+    &-tab {
+      cursor: pointer;
+
+      & + & {
+        margin-left: @gutter;
+      }
+
+      &-selected {
+        color: white;
+        .headerElementBorder(blue);
+      }
+    }
   }
 
   &-body {
@@ -57,10 +83,10 @@ body {
 }
 
 .rc-content {
-  & + & {
-    border-top: 1px solid black;
+  &:not(&-no-border) + & {
+    border-top: 1px solid grey;
   }
 
-  .parentPadding;
-  .childPadding;
+  .verticalPadding;
+  .horizontalPadding;
 }
