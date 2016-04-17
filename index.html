@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width">
   <title>Webpack template</title>
 </head>
-<body>
+<body ng-app="rc" ng-controller="layoutController">
+  <rc-header>Header</rc-header>
+  <rc-page>
+    <rc-container>Container 1</rc-container>
+    <rc-container>Container 2</rc-container>
+  </rc-page>
+  <script src="node_modules/angular/angular.min.js"></script>
   <script src="build/index.js"></script>
 </body>
 </html>
