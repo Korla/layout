@@ -11,6 +11,16 @@ body {
 
 @gutter: 5px;
 
+.parentPadding {
+  padding-top: @gutter;
+  padding-bottom: @gutter;
+}
+
+.childPadding {
+  padding-left: @gutter;
+  padding-right: @gutter;
+}
+
 .rc-header {
   padding: @gutter;
 
@@ -27,10 +37,30 @@ body {
   background-color: grey;
 }
 
-.rc-container {
-  padding: @gutter;
+.rc-panel {
   margin: @gutter;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 
   background-color: darkgray;
+
+  &-header {
+    border-bottom: 2px solid black;
+    .parentPadding;
+    .childPadding;
+  }
+
+  &-body {
+    overflow: scroll;
+  }
+}
+
+.rc-content {
+  & + & {
+    border-top: 1px solid black;
+  }
+
+  .parentPadding;
+  .childPadding;
 }
