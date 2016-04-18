@@ -10,7 +10,12 @@ angular.module('rc', [])
   .directive('rcPage', () => ({
     transclude: true,
     replace: true,
-    template: `<div class="rc-page" ng-transclude></div>`,
+    scope: {
+      vertical: '='
+    },
+    template: `<div class="rc-page"
+                    ng-class="{'rc-page-vertical': vertical}"
+                    ng-transclude></div>`,
     controller: () => {}
   }))
   .directive('rcPanel', () => ({
