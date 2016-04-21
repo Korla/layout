@@ -62,9 +62,7 @@ angular.module('rc', [])
       title: '@',
       selected: '@'
     },
-    template: `<div class="rc-content rc-content-no-border"
-                    ng-show="selected"
-                    ng-transclude></div>`,
+    template: `<div ng-show="selected" ng-transclude></div>`,
     link: (scope, element, attrs, tabsController) => tabsController.addTab(scope)
   }))
   .directive('rcContent', () => ({
