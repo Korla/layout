@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+@col_grey_dark: #131415;
+@col_grey_mid: #1d1e21;
+@col_grey_light: #a1a1a1;
+@col_grey_lightest: #323232;
+
+@col_primary: #01b5f6;
+
+@content_border: 1px solid @col_grey_lightest;
+
+@gutter: 10px;
+
 body {
   margin: 0;
   position: absolute;
@@ -11,18 +22,9 @@ body {
   left: 0;
   display: flex;
   flex-direction: column;
-}
-
-@gutter: 10px;
-
-.verticalPadding {
-  padding-top: @gutter;
-  padding-bottom: @gutter;
-}
-
-.horizontalPadding {
-  padding-left: @gutter;
-  padding-right: @gutter;
+  font-family: "Conduit ITC Pro";
+  font-size: 18px;
+  color: @col_grey_light;
 }
 
 .headerElementBorder(@color) {
@@ -31,9 +33,7 @@ body {
 
 .rc-header {
   padding: @gutter;
-
-  background-color: black;
-  color: white;
+  background-color: @col_grey_mid;
 }
 
 .rc-page {
@@ -41,8 +41,7 @@ body {
   display: flex;
   justify-content: space-around;
   padding: @gutter;
-
-  background-color: grey;
+  background-color: @col_grey_dark;
 
   &-vertical {
     flex-direction: column;
@@ -54,20 +53,20 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
-
-  background-color: darkgray;
+  background-color: @col_grey_mid;
 
   &-header {
-    border-bottom: 1px solid grey;
-    .horizontalPadding;
+    border-bottom: @content_border;
+    padding: 20px @gutter 0 @gutter;
 
     > * {
       display: inline-block;
-      .verticalPadding;
+      padding-bottom: 8px;
       .headerElementBorder(transparent);
     }
 
     &-tab {
+      text-transform: uppercase;
       cursor: pointer;
 
       & + & {
@@ -75,8 +74,7 @@ body {
       }
 
       &-selected {
-        color: white;
-        .headerElementBorder(blue);
+        .headerElementBorder(@col_primary);
       }
     }
   }
@@ -87,10 +85,10 @@ body {
 }
 
 .rc-content {
-  & + & {
-    border-top: 1px solid grey;
-  }
+  padding: @gutter;
+  font-size: 16px;
 
-  .verticalPadding;
-  .horizontalPadding;
+  & + & {
+    border-top: @content_border;
+  }
 }

@@ -26,7 +26,10 @@ angular.module('rc', [])
     replace: true,
     template: `
       <div class="rc-panel">
-        <div class="rc-panel-header" ng-transclude="header">Fallback header</div>
+        <div class="rc-panel-header">
+          <span class="rc-panel-header-tab rc-panel-header-tab-selected"
+                ng-transclude="header">Fallback header</span>
+        </div>
         <div class="rc-panel-body" ng-transclude="body"></div>
       </div>
     `
