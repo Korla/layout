@@ -1,6 +1,60 @@
 @import '../variables';
 
+.centeredFlexContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .rc-header {
-  padding: @gutter;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 @gutter-lg;
   background-color: @col_grey_mid;
+  flex-basis: auto;
+
+  > * {
+    .centeredFlexContainer;
+  }
+
+  &-logo {
+    margin-left: @gutter-lg;
+    margin-right: 72px;
+  }
+
+  &-tabs {
+    .centeredFlexContainer;
+
+    > * {
+      .centeredFlexContainer;
+      padding: 0 @gutter-lg;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        color: @col_white;
+      }
+    }
+
+    &-selected {
+      color: @col_white;
+      background-color: #303134;
+    }
+  }
+
+  &-menu {
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+
+    &-name {
+      color: @col_white;
+    }
+
+    &-role {
+      font-size: 12px;
+    }
+  }
 }

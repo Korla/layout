@@ -25,11 +25,10 @@
 
   &-header {
     border-bottom: @content_border;
-    padding: 20px @gutter 0 @gutter;
+    padding: 30px @gutter 0 @gutter;
 
     > * {
       display: inline-block;
-      padding-bottom: 8px;
       .headerElementBorder(transparent);
     }
 
@@ -42,6 +41,7 @@
       }
 
       &-selected {
+        color: @col_white;
         .headerElementBorder(@col_primary);
       }
     }
