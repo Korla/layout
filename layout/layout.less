@@ -1,0 +1,62 @@
+@import '../variables';
+
+.headerElementBorder(@color) {
+  border-bottom: 2px solid @color;
+}
+
+.rc-page {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: @gutter;
+  background-color: @col_grey_dark;
+
+  &-vertical {
+    flex-direction: column;
+  }
+}
+
+.rc-panel {
+  margin: @gutter;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  background-color: @col_grey_mid;
+
+  &-header {
+    border-bottom: @content_border;
+    padding: 20px @gutter 0 @gutter;
+
+    > * {
+      display: inline-block;
+      padding-bottom: 8px;
+      .headerElementBorder(transparent);
+    }
+
+    &-tab {
+      text-transform: uppercase;
+      cursor: pointer;
+
+      & + & {
+        margin-left: @gutter;
+      }
+
+      &-selected {
+        .headerElementBorder(@col_primary);
+      }
+    }
+  }
+
+  &-body {
+    overflow: scroll;
+  }
+}
+
+.rc-content {
+  padding: @gutter;
+  font-size: 16px;
+
+  & + & {
+    border-top: @content_border;
+  }
+}
