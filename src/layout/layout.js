@@ -6,9 +6,14 @@ angular.module('rc')
     scope: {
       vertical: '='
     },
-    template: `<div class="rc-page"
-                    ng-class="{'rc-page-vertical': vertical}"
-                    ng-transclude></div>`,
+    template: `
+      <div class="rc-app">
+        <rc-header></rc-header>
+        <div class="rc-page"
+             ng-class="{'rc-page-vertical': vertical}"
+             ng-transclude></div>
+      </div>
+    `,
     controller: () => {}
   }))
   .directive('rcPanel', () => ({
