@@ -5,7 +5,8 @@ angular.module('rc')
     replace: true,
     scope: {
       vertical: '=',
-      left: '='
+      left: '=',
+      centered: '='
     },
     template: `
       <div class="rc-app">
@@ -13,7 +14,8 @@ angular.module('rc')
         <div class="rc-page"
              ng-class="{
                'rc-page-vertical': vertical,
-               'rc-page-left': left
+               'rc-page-left': left,
+               'rc-page-centered': centered
              }"
              ng-transclude></div>
       </div>
