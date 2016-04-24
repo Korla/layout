@@ -6,10 +6,22 @@ angular.module('rc')
       <span>
         <span class="rc-header-logo">RayCare</span>
         <span class="rc-header-tabs">
-          <span class="rc-header-tabs-selected">Today</span>
-          <span>Booking</span>
-          <span>Treatment</span>
-          <span>Patients</span>
+          <span class="rc-header-tabs-selected">
+            <span class="fa fa-fw fa-th-large"></span>
+            Today
+          </span>
+          <span>
+            <span class="fa fa-fw fa-calendar"></span>
+            Booking
+          </span>
+          <span>
+            <span class="fa fa-fw fa-hospital-o"></span>
+            Treatment
+          </span>
+          <span>
+            <span class="fa fa-fw fa-user"></span>
+            Patients
+          </span>
         </span>
       </span>
       <span class="rc-header-menu">
