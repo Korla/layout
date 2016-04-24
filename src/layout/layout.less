@@ -1,5 +1,7 @@
 @import '../variables';
 
+@leftColumnWidth: 340px;
+
 .headerElementBorder(@color) {
   border-bottom: 2px solid @color;
 }
@@ -19,6 +21,11 @@
 
   &-vertical {
     flex-direction: column;
+  }
+
+  &-left > *:first-child {
+    width: @leftColumnWidth;
+    flex: initial;
   }
 }
 

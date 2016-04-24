@@ -1,16 +1,20 @@
-require('./layout.less')
+require('./layout.less');
 angular.module('rc')
   .directive('rcPage', () => ({
     transclude: true,
     replace: true,
     scope: {
-      vertical: '='
+      vertical: '=',
+      left: '='
     },
     template: `
       <div class="rc-app">
         <rc-header></rc-header>
         <div class="rc-page"
-             ng-class="{'rc-page-vertical': vertical}"
+             ng-class="{
+               'rc-page-vertical': vertical,
+               'rc-page-left': left
+             }"
              ng-transclude></div>
       </div>
     `,
