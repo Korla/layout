@@ -1,4 +1,4 @@
-require('./app.less')
+require('./app.less');
 angular.module('rc', ['ui.router'])
   .config(($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/home');
