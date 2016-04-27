@@ -8,16 +8,10 @@
 
 .rc-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;;
   justify-content: space-between;
   height: 52px;
-  padding: 0 @gutter-lg;
   background-color: @col_grey_mid;
-  flex-basis: auto;
-
-  > * {
-    .centeredFlexContainer;
-  }
 
   &-logo {
     margin-left: @gutter-lg;
@@ -44,17 +38,34 @@
     }
   }
 
+  &-left {
+    .centeredFlexContainer;
+    flex-grow: 1;
+  }
+
   &-menu {
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: center;
+    position: relative;
+    background-color: @col_grey_mid;
+    border-bottom: 1px solid @col_primary;
+    box-shadow: 0px 0px 5px 4px @col_grey_dark;
+    padding-top: @gutter;
 
-    &-name {
-      color: @col_white;
-    }
-
-    &-role {
-      font-size: 12px;
+    &-patient {
+      margin-right: @gutter;
     }
   }
+}
+
+.img-wrapper {
+  position: relative;
+  padding-bottom: 74px;
+  width: 74px;
+}
+.img-wrapper img {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  height: 96%;
+  width: 96%;
+  border-radius: 50%;
 }
