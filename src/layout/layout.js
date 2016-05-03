@@ -31,8 +31,7 @@ angular.module('rc')
     template: `
       <div class="rc-panel">
         <div class="rc-panel-header">
-          <span class="rc-panel-header-tab rc-panel-header-tab-selected"
-                ng-transclude="header">Fallback header</span>
+          <span class="rc-panel-header-tab" ng-transclude="header">Fallback header</span>
         </div>
         <div class="rc-panel-body" ng-transclude="body"></div>
       </div>
