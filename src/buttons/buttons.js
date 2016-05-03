@@ -10,8 +10,11 @@ angular.module('rc')
   .directive('rcButton', () => ({
     transclude: true,
     replace: true,
+    scope: {
+      rcDisabled: '='
+    },
     template: `
-      <span class="rc-button" ng-transclude></span>
+      <span class="rc-button" ng-class="{'rc-button-disabled': rcDisabled}" ng-transclude></span>
     `
   }))
 ;

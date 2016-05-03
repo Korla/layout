@@ -16,13 +16,18 @@
   cursor: pointer;
   font-size: 16px;
 
-  &:hover {
+  &:not(&-disabled):hover {
     color: @col_primary;
   }
 
-  &:active {
+  &:not(&-disabled):active {
     border-color: @col_primary;
     color: @col_white;
     background-color: @col_grey_lightest;
+  }
+
+  &-disabled {
+    cursor: default;
+    color: @col_grey_lightest;
   }
 }
