@@ -1,0 +1,22 @@
+@import '../variables';
+
+.rc-button-list {
+  display: flex;
+  margin-bottom: 8px;
+
+  > * + * {
+    margin-left: @gutter;
+  }
+}
+
+.rc-button {
+  padding: 6px 18px 4px 18px;
+  border: 1px solid;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    border-color: @col_primary;
+  }
+}

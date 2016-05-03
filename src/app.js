@@ -10,3 +10,4 @@ angular.module('rc', ['ui.router'])
 
 require('./layout/layout.js');
 require('./header/header.js');
+require('./buttons/buttons.js');

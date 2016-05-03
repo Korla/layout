@@ -28,10 +28,16 @@ angular.module('rc')
       'body': 'rcPanelBody'
     },
     replace: true,
+    scope: {
+      title: '@'
+    },
     template: `
       <div class="rc-panel">
         <div class="rc-panel-header">
-          <span class="rc-panel-header-tab" ng-transclude="header">Fallback header</span>
+          <span class="rc-panel-header-tabs">
+            <span class="rc-panel-header-tabs-tab rc-panel-header-tabs-tab-selected" ng-bind="title"></span>
+          </span>
+          <span class="rc-panel-header-content" ng-transclude="header"></span>
         </div>
         <div class="rc-panel-body" ng-transclude="body"></div>
       </div>
@@ -44,11 +50,13 @@ angular.module('rc')
     template: `
       <div class="rc-panel">
         <div class="rc-panel-header">
-          <span class="rc-panel-header-tab"
-                ng-class="{'rc-panel-header-tab-selected': tab.selected}"
-                ng-repeat="tab in tabs"
-                ng-click="select(tab)"
-                ng-bind="tab.title"></span>
+          <span class="rc-panel-header-tabs">
+            <span class="rc-panel-header-tabs-tab"
+                  ng-class="{'rc-panel-header-tabs-tab-selected': tab.selected}"
+                  ng-repeat="tab in tabs"
+                  ng-click="select(tab)"
+                  ng-bind="tab.title"></span>
+            </span>
         </div>
         <div class="rc-panel-body" ng-transclude></div>
       </div>
