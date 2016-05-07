@@ -29,13 +29,13 @@ angular.module('rc')
     },
     replace: true,
     scope: {
-      title: '@'
+      rcTitle: '@'
     },
     template: `
       <div class="rc-panel">
         <div class="rc-panel-header">
           <span class="rc-panel-header-tabs">
-            <span class="rc-panel-header-tabs-tab rc-panel-header-tabs-tab-selected" ng-bind="title"></span>
+            <span class="rc-panel-header-tabs-tab rc-panel-header-tabs-tab-selected" ng-bind="rcTitle"></span>
           </span>
           <span class="rc-panel-header-content" ng-transclude="header"></span>
         </div>
@@ -55,7 +55,7 @@ angular.module('rc')
                   ng-class="{'rc-panel-header-tabs-tab-selected': tab.selected}"
                   ng-repeat="tab in tabs"
                   ng-click="select(tab)"
-                  ng-bind="tab.title"></span>
+                  ng-bind="tab.rcTitle"></span>
             </span>
         </div>
         <div class="rc-panel-body" ng-transclude></div>
@@ -73,7 +73,7 @@ angular.module('rc')
     transclude: true,
     replace: true,
     scope: {
-      title: '@',
+      rcTitle: '@',
       selected: '@'
     },
     template: `<div ng-show="selected" ng-transclude></div>`,

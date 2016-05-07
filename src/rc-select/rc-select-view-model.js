@@ -28,7 +28,7 @@
 export default class SelectViewModel {
   constructor({options, template, textFn}) {
     this.options = options || [];
-    this.template = template || 'rc-select/templates/simple.html';
+    this.template = template || 'src/rc-select/templates/simple.html';
     this.textFn = textFn || (option => option);
     this.states = {
       'Not focused': {

@@ -1,3 +1,4 @@
+require('./rc-select.less');
 angular.module('rc')
   .directive('rcSelect', ($window, $timeout) => {
     return {
@@ -8,7 +9,7 @@ angular.module('rc')
         id: '@',
         vm: '='
       },
-      templateUrl: 'rc-select/rc-select.html',
+      templateUrl: 'src/rc-select/rc-select.html',
       link: (scope, $element, attrs, ngModelCtrl) => {
         var element = $element[0];
         var hiddenInput = element.querySelector('.rc-select-hidden-input');
