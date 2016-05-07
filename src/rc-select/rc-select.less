@@ -1,0 +1,76 @@
+@import '../variables';
+
+@rc-select-padding: 4px @gutter;
+
+.rc-select {
+  position: relative;
+  color: @col_grey_faded;
+
+  &-selected {
+    border: 1px solid;
+    padding: @rc-select-padding;
+    cursor: default;
+
+    &-focused {
+      color: @col_grey_light;
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -4px;
+    margin-right: 10px;
+
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &-options {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid @col_grey_light;
+    z-index: 1;
+    box-shadow: 1px 2px 4px -1px rgba(0, 0, 0, 0.3);
+    max-height: 700px;
+    overflow-y: scroll;
+    background-color: @col_grey_mid;
+
+    &.calculate-height {
+      visibility: hidden;
+      display: inline-block !important;
+    }
+
+    &-up {
+      bottom: 34px;
+      box-shadow: 1px -2px 4px -1px rgba(0, 0, 0, 0.3);
+      border-bottom: none;
+    }
+  }
+
+  &-option {
+    cursor: pointer;
+    padding: @rc-select-padding;
+    color: @col_grey_light;
+
+    &:not(&-selected) {
+      color: @col_grey_faded;
+    }
+
+    & + * {
+      border-top: 1px solid @col_grey_light;
+    }
+
+    &:hover{
+      color: @col_white;
+    }
+  }
+
+  & input {
+    position: absolute;
+    left: -99999999px;
+  }
+}
