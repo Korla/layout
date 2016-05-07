@@ -6,6 +6,16 @@
   border-bottom: 2px solid @color;
 }
 
+.horizontalPadding(@size) {
+  padding-left: @size;
+  padding-right: @size;
+}
+
+.verticalPadding(@size) {
+  padding-top: @size;
+  padding-bottom: @size;
+}
+
 .rc-app {
   display: flex;
   flex-direction: column;
@@ -16,7 +26,8 @@
   height: 100%;
   display: flex;
   justify-content: space-around;
-  padding: @gutter;
+  .horizontalPadding(@gutter);
+  .verticalPadding(@gutter);
   background-color: @col_grey_dark;
 
   &-vertical {
@@ -43,14 +54,13 @@
 
   &-header {
     border-bottom: 1px solid #323232;
-    padding: 0 10px 0 10px;
+    .horizontalPadding(@gutter-lg);
     height: 52px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 
     > * {
-      display: inline-block;
       .headerElementBorder(transparent);
     }
 
@@ -77,12 +87,12 @@
 
   &-body {
     overflow: auto;
-    padding: 0 @gutter;
+    .horizontalPadding(@gutter-lg);
   }
 }
 
 .rc-content {
-  padding: @gutter 0;
+  .verticalPadding(@gutter);
   font-size: 16px;
 
   & + & {
