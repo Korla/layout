@@ -23,7 +23,6 @@ rc
         ]
         $scope.pa = options[0];
         $scope.selectPAVm = new SelectViewModel({options});
-        console.log($scope.selectPAVm);
       }
     })
   });
