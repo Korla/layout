@@ -1,27 +1,18 @@
-@col-rc-select-focus-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-@col-rc-select-border: #ccc;
-@col-rc-select-muted-text: #ccc;
-@col-rc-select-highlight: #eee;
-@rc-select-border-radius: 4px;
+@import '../variables';
+
+@rc-select-padding: 4px @gutter;
 
 .rc-select {
   position: relative;
+  color: @col_grey_faded;
 
   &-selected {
+    border: 1px solid;
+    padding: @rc-select-padding;
+    cursor: default;
+
     &-focused {
-      border-color: #66afe9;
-      box-shadow: @col-rc-select-focus-shadow;
-    }
-
-    &-show-dropdown {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    &-up {
-      border-radius: @rc-select-border-radius;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      color: @col_grey_light;
     }
   }
 
@@ -31,20 +22,22 @@
     top: 50%;
     margin-top: -4px;
     margin-right: 10px;
+
+    path {
+      fill: currentColor;
+    }
   }
 
   &-options {
     position: absolute;
     display: inline-block;
     width: 100%;
-    border: 1px solid @col-rc-select-border;
-    background-color: white;
+    border: 1px solid @col_grey_light;
     z-index: 1;
     box-shadow: 1px 2px 4px -1px rgba(0, 0, 0, 0.3);
     max-height: 700px;
     overflow-y: scroll;
-    border-bottom-left-radius: @rc-select-border-radius;
-    border-bottom-right-radius: @rc-select-border-radius;
+    background-color: @col_grey_mid;
 
     &.calculate-height {
       visibility: hidden;
@@ -55,26 +48,23 @@
       bottom: 34px;
       box-shadow: 1px -2px 4px -1px rgba(0, 0, 0, 0.3);
       border-bottom: none;
-      border-radius: 0;
-      border-top-left-radius: @rc-select-border-radius;
-      border-top-right-radius: @rc-select-border-radius;
     }
   }
 
   &-option {
     cursor: pointer;
-    padding: 6px;
+    padding: @rc-select-padding;
 
     &:not(&-selected) {
-      color: @col-rc-select-muted-text;
+      color: @col_grey_faded;
     }
 
     & + * {
-      border-top: 1px solid @col-rc-select-border;
+      border-top: 1px solid @col_grey_light;
     }
 
     &:hover{
-      background-color: @col-rc-select-highlight;
+      color: @col_white;
     }
   }
 
