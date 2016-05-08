@@ -24,19 +24,17 @@
     <span class="row gutter-horizontal">
       <span class="rc-header-menu-patient column">
         <span class="font-smaller">Current patient</span>
-        <span class="primary">Bill Gates</span>
+        <span class="primary" ng-bind="patient.name"></span>
       </span>
       <span class="img-wrapper">
-        <img src="src/img/bill.jpg"/>
+        <img ng-src="{{patient.imgUrl}}"/>
       </span>
     </span>
     <span class="column">
       <span class="gutter-horizontal">Tasks</span>
-      <span class="list-item font-smaller gutter-horizontal">
-        Book initial appointments <span class="highlight">Bill Gates</span>
-      </span>
-      <span class="list-item font-smaller gutter-horizontal">
-        Book treatment fractions <span class="highlight">Bill Gates</span>
+      <span ng-repeat="task in tasks" class="list-item font-smaller gutter-horizontal" ng-click="click(task)">
+        <span ng-bind="task.title"></span>
+        <span class="highlight" ng-bind="task.patient"></span>
       </span>
     </span>
   </span>

@@ -18,11 +18,12 @@ rc
       templateUrl: `src/pages/booking.html`,
       controller: $scope => {
         var options = [
-          'Book initial appointments, Bill gates',
-          'Book treatment fractions, Bill gates',
+          'Initial appointments',
+          'Treatment fractions',
         ]
         $scope.pa = options[0];
         $scope.selectPAVm = new SelectViewModel({options});
+        $scope.calendarTitle = '9 - 16 May, 2016';
       }
     })
   });
