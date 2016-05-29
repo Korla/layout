@@ -1,15 +1,18 @@
 <div class="rc-select">
-  <div class="rc-select-selected"
-       ng-class="{
-         'rc-select-selected-show-dropdown': vm.currentState.showDropdown,
-         'rc-select-selected-focused': vm.currentState.focused,
-         'rc-select-selected-up': optionsUp && vm.currentState.showDropdown
-       }"
-       ng-click="vm.currentState.selectedClicked()"
-       ng-bind="vm.textFn(vm.selected)"></div>
-  <svg class="rc-select-arrow" width="10" height="10" viewbox="0 0 100 100">
-    <path d="M100 0 50 80 0 0Z" fill="black"/>
-  </svg>
+  <div class="rc-select-display"
+       ng-click="vm.currentState.selectedClicked()">
+    <div class="rc-select-display-selection"
+      ng-class="{
+       'rc-select-display-selection-focused': vm.currentState.focused,
+       'rc-select-display-selection-up': optionsUp && vm.currentState.showDropdown
+      }"
+      ng-bind="vm.textFn(vm.selected)"></div>
+    <div class="rc-select-display-arrow">
+      <svg width="10" height="10" viewbox="0 0 100 100">
+        <path d="M100 0 50 80 0 0Z" fill="black"/>
+      </svg>
+    </div>
+  </div>
   <div class="rc-select-options"
        ng-show="vm.currentState.showDropdown"
        ng-class="{
@@ -23,8 +26,8 @@
          }"
          ng-include src="vm.template"></div>
   </div>
-  <input ng-attr-id="{{id}}"
-         class="rc-select-hidden-input"
+  <input class="rc-select-hidden-input"
+         ng-attr-id="{{id}}"
          ng-focus="vm.currentState.focus()"
          ng-blur="blurIfInputWasntClicked($event)"
          ng-keydown="vm.keyDown($event.keyCode)"/>

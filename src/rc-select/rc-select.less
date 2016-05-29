@@ -6,25 +6,32 @@
   position: relative;
   color: @col_grey_faded;
 
-  &-selected {
-    border: 1px solid;
-    padding: @rc-select-padding;
-    cursor: default;
+  &-display {
+    display: flex;
 
-    &-focused {
-      color: @col_grey_light;
+    &-selection {
+      border: 1px solid;
+      border-right: none;
+      padding: @rc-select-padding;
+      cursor: default;
+      flex-grow: 1;
+
+      &-focused {
+        color: @col_grey_light;
+      }
     }
-  }
 
-  &-arrow {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    margin-top: -4px;
-    margin-right: 10px;
+    &-arrow {
+      background-color: @col_primary;
+      width: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: black;
 
-    path {
-      fill: currentColor;
+      path {
+        fill: currentColor;
+      }
     }
   }
 
@@ -69,7 +76,7 @@
     }
   }
 
-  & input {
+  &-hidden-input {
     position: absolute;
     left: -99999999px;
   }
